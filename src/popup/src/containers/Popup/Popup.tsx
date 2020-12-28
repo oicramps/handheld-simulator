@@ -1,10 +1,13 @@
-import React from 'react'
-const Popup = () => {
-    return (
-        <div>
-            CONTEÚDO
-        </div>
-    )
-}
+import React from 'react';
+import Header from '../Header';
+import { Container } from './styles';
+
+const Popup: React.FC = () => {
+  return (
+    <Container>
+      <Header />
+    </Container>
+  );
+};
 
 export default Popup;
