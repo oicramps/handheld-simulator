@@ -1,4 +1,5 @@
 const { CheckerPlugin } = require('awesome-typescript-loader');
+const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { optimize } = require('webpack');
 const { join } = require('path');
@@ -38,6 +39,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/assets", to: "assets" },
+      ],
     }),
   ],
   resolve: {

@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "My chrome extension",
+    "name": "Handheld Simulator",
     "version": "1.0.0",
     "permissions": [
         "tabs",
@@ -32,6 +32,12 @@
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
     "browser_action": {
         "default_popup": "popup/index.html",
-        "default_title": "React Chrome Extension Starter"
+        "default_title": "Handheld Simulator"
+    },
+    "icons": {
+        "16": "assets/icon16.png",
+        "32": "assets/icon32.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
     }
 }
