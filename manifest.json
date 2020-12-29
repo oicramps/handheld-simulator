@@ -3,17 +3,12 @@
     "name": "Handheld Simulator",
     "version": "1.0.0",
     "permissions": [
-        "tabs",
-        "activeTab",
-        "storage"
+        "activeTab"
     ],
     "content_scripts": [
         {
             "js": [
                 "contentscript.js"
-            ],
-            "css": [
-                "contentscript.css"
             ],
             "matches": [
                 "<all_urls>"

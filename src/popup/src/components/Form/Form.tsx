@@ -8,10 +8,18 @@ const Header: React.FC = () => {
     if (inputRef.current) inputRef.current.focus();
   }, []);
 
+  const handleScan = () => {
+    const code: string = inputRef.current?.value || '';
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs: any[]) {
+      chrome.tabs.sendMessage(tabs[0].id, { action: 'fill', message: code }, {});
+    });
+  };
+
   return (
     <FormContainer>
       <TextField ref={inputRef} />
-      <ScanButton>Scan</ScanButton>
+      <ScanButton onClick={handleScan}>Scan</ScanButton>
     </FormContainer>
   );
 };
