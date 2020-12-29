@@ -30,7 +30,8 @@ function simulateScanCode(code) {
 
 function inject(fn) {
   const script = document.createElement("script");
-  script.text = `(${fn.toString()})();`;
+  script.text = `${fn.toString()}`;
+  console.log("script.text ", script.text )
   document.documentElement.appendChild(script);
 }
 

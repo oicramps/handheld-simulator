@@ -13,6 +13,7 @@ const Header: React.FC = () => {
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs: any[]) {
       chrome.tabs.sendMessage(tabs[0].id, { action: 'fill', message: code }, {});
+      window.close();
     });
   };
 
