@@ -1,13 +1,38 @@
 import React from 'react';
 import Popup from './containers/Popup';
 import { createGlobalStyle } from 'styled-components';
+import Montserrat400 from './assets/fonts/Montserrat-Regular.ttf';
+import Montserrat600 from './assets/fonts/Montserrat-SemiBold.ttf';
+import Montserrat700 from './assets/fonts/Montserrat-Bold.ttf';
 
 const GlobalStyle = createGlobalStyle`
-  
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-  body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+
+  @font-face {
+    font-family: Jura;
+    font-style: normal;
+    font-weight: 400;
+    src: url(${Montserrat400});
+  }
+
+  @font-face {
+    font-family: Jura;
+    font-style: normal;
+    font-weight: 600;
+    src: url(${Montserrat600});
+  }
+
+  @font-face {
+    font-family: Jura;
+    font-style: normal;
+    font-weight: 700;
+    src: url(${Montserrat700});
+  }
+ 
+  body, input {
+    font-family: 'Jura', sans-serif;
+    font-size: 14px;
+    outline: none;
+    color: #2B2B2B;
   }
 `;
 
