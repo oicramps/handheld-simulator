@@ -2,9 +2,7 @@
     "manifest_version": 2,
     "name": "Handheld Simulator",
     "version": "1.0.0",
-    "permissions": [
-        "activeTab"
-    ],
+    "permissions": [],
     "content_scripts": [
         {
             "js": [

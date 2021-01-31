@@ -1,4 +1,4 @@
-function simulateScanCode(code) {
+const simulateScanCodeScript = (code) => {
   const node = document.activeElement;
   const setValue = Object.getOwnPropertyDescriptor(
     HTMLInputElement.prototype,
@@ -11,6 +11,7 @@ function simulateScanCode(code) {
     console.error("There is no fields called 'value' in this page");
   }
   node.dispatchEvent(event);
+  console.log("node", node);
   event.simulated = true;
   let e: any = new CustomEvent("keyup");
   e.altKey = false;
@@ -22,20 +23,23 @@ function simulateScanCode(code) {
   e.keyCode = e.key.charCodeAt(0);
   e.which = e.keyCode;
   window.dispatchEvent(e);
+  node.dispatchEvent(e);
   const audio = new Audio(
-    "http://soundbible.com/mp3/Beep-SoundBible.com-923660219.mp3"
+    "https://soundbible.com/mp3/Beep-SoundBible.com-923660219.mp3"
   );
   audio.play();
 }
 
-function inject(fn) {
-  const script = document.createElement("script");
-  script.text = `${fn.toString()}`;
-  console.log("script.text ", script.text )
-  document.documentElement.appendChild(script);
+const simulateScanCode = code => {
+    inject(simulateScanCodeScript, code);
 }
 
-inject(simulateScanCode);
+function inject(fn, code) {
+    const script = document.createElement("script");
+    script.text = `(${fn.toString()})(${code});`;
+    document.documentElement.appendChild(script);
+  }
+
 
 chrome.runtime.onMessage.addListener((request) => {
   if (request.action === "fill") {
