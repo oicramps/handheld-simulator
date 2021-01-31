@@ -15,10 +15,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - name: Install dependencies
+        run: yarn install && cd 
       - name: Build
-        run: |
-         npm run build
-         npm run zip
+        run: yarn build 
+      - name: Zip
+        run: yarn zip 
       - name: Upload & release
         uses: trmcnvn/chrome-addon@v2
         with:
