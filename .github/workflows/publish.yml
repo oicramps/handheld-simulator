@@ -22,9 +22,11 @@ jobs:
       - name: Zip
         run: yarn zip 
       - name: Upload & release
-        uses: trmcnvn/chrome-addon@v2
+        uses: Passiverecords/chrome-extension-upload-action@1.4.1
         with:
-          extension: lodmooidffdogioahhfhnccfpjnblcio
-          zip: extension.zip
+          refresh-token: ${{ secrets.REFRESH_TOKEN }}
+          app-id: ${{ secrets.EXTENSION_ID }}
           client-id: ${{ secrets.CLIENT_ID }}
           client-secret: ${{ secrets.CLIENT_SECRET }}
+          file-name: ./extension.zip
+          publish: False
