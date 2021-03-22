@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 14
       - name: Install dependencies
-        run: yarn install && cd 
+        run: yarn install:all
       - name: Build
         run: yarn build 
       - name: Zip
@@ -25,6 +25,6 @@ jobs:
         uses: trmcnvn/chrome-addon@v2
         with:
           extension: lodmooidffdogioahhfhnccfpjnblcio
-          zip: dist/extension.zip
+          zip: extension.zip
           client-id: ${{ secrets.CLIENT_ID }}
           client-secret: ${{ secrets.CLIENT_SECRET }}
