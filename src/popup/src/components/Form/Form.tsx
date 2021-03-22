@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   const handleScan = () => {
     const code: string = inputRef.current?.value || '';
 
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs: any[]) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs: chrome.tabs.Tab[]) {
       chrome.tabs.sendMessage(tabs[0].id, { action: 'fill', message: code }, {});
       window.close();
     });
