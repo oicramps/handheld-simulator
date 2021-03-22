@@ -27,7 +27,7 @@ jobs:
         uses: trmcnvn/chrome-addon@v2
         with:
           extension:  ${{ secrets.EXTENSION_ID }}
-          zip: .
+          zip: ./extension.zip
           client-id: ${{ secrets.CLIENT_ID }}
           client-secret: ${{ secrets.CLIENT_SECRET }}
           refresh-token: ${{ secrets.REFRESH_TOKEN }}
