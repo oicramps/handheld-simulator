@@ -1,4 +1,4 @@
-const simulateScanCodeScript = (code) => {
+const simulateScanCodeScript = (code : string) => {
   const node = document.activeElement;
   const setValue = Object.getOwnPropertyDescriptor(
     HTMLInputElement.prototype,
